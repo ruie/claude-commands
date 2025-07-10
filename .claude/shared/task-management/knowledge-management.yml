@@ -1,0 +1,214 @@
+# Knowledge Management Patterns
+# Registry as hive mind and continuous learning system
+
+Registry_As_Hive_Mind:
+  version: "2.0.0"
+  
+  core_structure:
+    metadata:
+      version: "semantic version"
+      created: "ISO timestamp"
+      project: "project name"
+      
+    cognitive_metrics:
+      thinking_efficiency:
+        total_thoughts: "cumulative across all tasks"
+        thoughts_per_subtask: "efficiency metric"
+        ultrathink_usage: "complex problem indicator"
+        
+      learning_velocity:
+        patterns_discovered: "new patterns found"
+        patterns_reused: "existing patterns applied"
+        failure_lessons: "documented failures"
+        
+      agent_performance:
+        success_rate: "completed vs blocked"
+        time_per_subtask: "velocity tracking"
+        knowledge_contribution: "scratchpad quality"
+        
+    knowledge_graph:
+      patterns:
+        - id: "pattern_001"
+          description: "Error handling in async functions"
+          discovered_by: "agent_7"
+          task_origin: 3
+          reuse_count: 5
+          locations: ["src/module/x.ts", "src/module/y.ts"]
+          
+      solutions:
+        - id: "solution_001"
+          problem: "Timeout in API calls"
+          approach: "Exponential backoff with jitter"
+          success_rate: 0.95
+          tasks_used: [2, 5, 7]
+          
+      failures:
+        - id: "failure_001"
+          attempted: "Direct state mutation"
+          why_failed: "React re-render issues"
+          correct_approach: "Immutable updates"
+          tasks_affected: [1, 3]
+
+Registry_Operations:
+  atomic_updates:
+    protocol:
+      - "Read current state"
+      - "Validate checksum"
+      - "Apply changes in memory"
+      - "Update timestamps"
+      - "Calculate new checksum"
+      - "Write atomically"
+      - "Verify success"
+      
+    update_types:
+      task_progress:
+        required: ["status", "timestamp", "progress_percentage"]
+        optional: ["blocker_reason", "discoveries"]
+        
+      knowledge_discovery:
+        required: ["pattern_type", "description", "location"]
+        optional: ["reusability", "performance_impact"]
+        
+      learning_capture:
+        required: ["lesson_type", "description", "task_context"]
+        optional: ["prevention_strategy", "detection_method"]
+
+Living_Scratchpad:
+  philosophy: "The scratchpad is the agent's stream of consciousness made permanent"
+  
+  continuous_documentation:
+    real_time_capture:
+      - "Write while thinking, not after"
+      - "Document decision process"
+      - "Record failed attempts immediately"
+      - "Note patterns as discovered"
+      - "Save useful code snippets"
+      
+    structured_sections: |
+      # Task X.Y Scratchpad - Agent Working Memory
+      
+      ## Current Understanding
+      [What I know about this subtask]
+      
+      ## Exploration Findings
+      [Patterns and code discovered]
+      
+      ## Decision Log
+      [TIMESTAMP] Decided to X because Y (evidence: Z)
+      
+      ## Failed Attempts
+      [TIMESTAMP] Tried X but failed: [reason]
+      
+      ## Successful Patterns
+      [TIMESTAMP] Y worked because Z
+      
+      ## Key Commands
+      ```bash
+      # Commands that worked
+      ```
+      
+      ## Edge Cases Discovered
+      - Case 1: [description]
+      - Case 2: [description]
+      
+      ## Next Agent Guidance
+      [Critical information for next agent]
+      
+    quality_metrics:
+      substance:
+        - "Contains actual code examples"
+        - "Documents specific decisions"
+        - "Includes failure analysis"
+        - "Shows learning progression"
+        
+      continuity:
+        - "Regular timestamp entries"
+        - "Progressive understanding"
+        - "Building on previous work"
+        - "Clear handoff notes"
+
+Cross_Task_Learning:
+  pattern_inheritance:
+    discovery_flow:
+      - "Agent discovers pattern in Task 3"
+      - "Documents in scratchpad with examples"
+      - "Registry captures pattern metadata"
+      - "Future tasks surface relevant patterns"
+      - "Agents build on proven solutions"
+      
+    reuse_protocol:
+      - "Search registry for similar problems"
+      - "Identify applicable patterns"
+      - "Adapt to current context"
+      - "Document adaptations"
+      - "Update pattern success metrics"
+      
+  failure_prevention:
+    learning_from_mistakes:
+      - "Document why approach failed"
+      - "Identify root cause"
+      - "Suggest prevention"
+      - "Update registry warnings"
+      - "Alert future agents"
+      
+    antipattern_library:
+      - "Approaches that seem good but fail"
+      - "Common misconceptions"
+      - "Performance traps"
+      - "Security vulnerabilities"
+
+Knowledge_Synthesis:
+  task_completion:
+    knowledge_extraction:
+      - "Summarize key learnings"
+      - "Extract reusable patterns"
+      - "Document edge cases"
+      - "Update best practices"
+      
+    archival_process:
+      - "Move to completed_tasks"
+      - "Preserve scratchpad"
+      - "Update knowledge graph"
+      - "Calculate impact metrics"
+      
+  organizational_learning:
+    pattern_evolution:
+      - "Track pattern success rates"
+      - "Identify improvement opportunities"
+      - "Merge similar patterns"
+      - "Deprecate outdated approaches"
+      
+    knowledge_queries:
+      by_pattern: "Find all uses of pattern X"
+      by_problem: "How was Y solved before?"
+      by_module: "What patterns exist in Z?"
+      by_success: "Most successful approaches"
+
+Evidence_Tracking:
+  decision_evidence:
+    required_format: |
+      Decision: [what was decided]
+      Because: [reasoning]
+      Evidence: [specific proof]
+      - Found in: [file:line]
+      - Tests show: [result]
+      - Docs state: [reference]
+      
+  pattern_evidence:
+    code_examples: "Actual code snippets"
+    test_results: "Measurable outcomes"
+    performance_data: "Benchmarks and metrics"
+    documentation: "Official sources"
+
+Metrics_And_Analytics:
+  task_intelligence:
+    - "Average thoughts per subtask"
+    - "Pattern reuse rate"
+    - "Failure recovery time"
+    - "Knowledge contribution score"
+    
+  system_evolution:
+    - "Total patterns discovered"
+    - "Pattern success rates"
+    - "Learning velocity"
+    - "Agent efficiency trends"

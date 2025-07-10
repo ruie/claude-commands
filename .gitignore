@@ -19,3 +19,10 @@ node_modules/
 
 # Task management system files (these should stay local to each project)
 tasks/
+
+# Backups created by install script
+backups/
+
+# Test output
+test-output/
+coverage/

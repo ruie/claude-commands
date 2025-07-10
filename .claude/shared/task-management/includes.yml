@@ -1,69 +1,60 @@
-# Task Management System - Include Registry
-# Centralized registry of all include paths for task management patterns
+# Task Management System - Master Include Registry
+# Consolidated patterns following SimpleClaude DNA
 
-# Core Task Patterns
-task-core:
-  task_lifecycle: shared/task-management/task-core-patterns.yml#Task_Lifecycle
-  task_states: shared/task-management/task-core-patterns.yml#Task_States
-  task_priorities: shared/task-management/task-core-patterns.yml#Task_Priorities
-  task_types: shared/task-management/task-core-patterns.yml#Task_Types
+# Core Task Intelligence
+task_intelligence:
+  natural_language: shared/task-management/natural-intelligence.yml#Semantic_Understanding
+  intent_detection: shared/task-management/natural-intelligence.yml#Intent_Detection
+  complexity_assessment: shared/task-management/natural-intelligence.yml#Complexity_Assessment
+  evidence_language: shared/task-management/natural-intelligence.yml#Evidence_Language
 
-# Registry Management
-registry:
-  structure: shared/task-management/registry-patterns.yml#Registry_Structure
-  update_protocol: shared/task-management/registry-patterns.yml#Update_Protocol
-  sync_rules: shared/task-management/registry-patterns.yml#Sync_Rules
-  validation: shared/task-management/registry-patterns.yml#Validation
-  atomic_operations: shared/task-management/registry-patterns.yml#Atomic_Operations
+# Agent Cognition & Behavior  
+agent_cognition:
+  cognitive_model: shared/task-management/agent-cognition.yml#Agent_Cognitive_Model
+  agent_types: shared/task-management/agent-cognition.yml#Agent_Types
+  living_memory: shared/task-management/agent-cognition.yml#Living_Memory
+  workspace_consciousness: shared/task-management/agent-cognition.yml#Workspace_Consciousness
+  knowledge_synthesis: shared/task-management/agent-cognition.yml#Knowledge_Synthesis
 
-# Agent Execution
-agent:
-  isolation: shared/task-management/agent-patterns.yml#Agent_Isolation
-  boundaries: shared/task-management/agent-patterns.yml#Workspace_Boundaries
-  instructions: shared/task-management/agent-patterns.yml#Agent_Instructions
-  monitoring: shared/task-management/agent-patterns.yml#Execution_Monitoring
-  failure_protocol: shared/task-management/agent-patterns.yml#Failure_Protocol
+# Task Workflows
+workflows:
+  lifecycle: shared/task-management/task-workflows.yml#Task_Lifecycle
+  exploration: shared/task-management/task-workflows.yml#Exploration_Patterns
+  planning: shared/task-management/task-workflows.yml#Planning_Workflow
+  verification: shared/task-management/task-workflows.yml#Verification_Patterns
+  implementation: shared/task-management/task-workflows.yml#Implementation_Patterns
+  adaptation: shared/task-management/task-workflows.yml#Workflow_Adaptation
 
-# Thinking Modes
+# Knowledge Management
+knowledge:
+  hive_mind: shared/task-management/knowledge-management.yml#Registry_As_Hive_Mind
+  registry_ops: shared/task-management/knowledge-management.yml#Registry_Operations
+  scratchpad: shared/task-management/knowledge-management.yml#Living_Scratchpad
+  cross_learning: shared/task-management/knowledge-management.yml#Cross_Task_Learning
+  synthesis: shared/task-management/knowledge-management.yml#Knowledge_Synthesis
+  metrics: shared/task-management/knowledge-management.yml#Metrics_And_Analytics
+
+# Multi-Agent Coordination
+coordination:
+  orchestration: shared/task-management/coordination-patterns.yml#Agent_Orchestration
+  isolation: shared/task-management/coordination-patterns.yml#Agent_Isolation
+  lock_management: shared/task-management/coordination-patterns.yml#Lock_Management
+  monitoring: shared/task-management/coordination-patterns.yml#Execution_Monitoring
+  strategies: shared/task-management/coordination-patterns.yml#Coordination_Strategies
+  communication: shared/task-management/coordination-patterns.yml#Communication_Protocols
+
+# Thinking Integration
 thinking:
-  modes: shared/task-management/thinking-patterns.yml#Thinking_Modes
-  default_behavior: shared/task-management/thinking-patterns.yml#Default_Behavior
-  ultrathink: shared/task-management/thinking-patterns.yml#Ultrathink_Mode
-  budget_tracking: shared/task-management/thinking-patterns.yml#Budget_Tracking
-  subagent_delegation: shared/task-management/thinking-patterns.yml#Subagent_Delegation
+  modes: shared/task-management/thinking-integration.yml#Thinking_Modes
+  natural_detection: shared/task-management/thinking-integration.yml#Natural_Language_Detection
+  automatic_depth: shared/task-management/thinking-integration.yml#Automatic_Depth_Selection
+  budget_management: shared/task-management/thinking-integration.yml#Budget_Management
+  subagent_thinking: shared/task-management/thinking-integration.yml#Subagent_Thinking
+  cognitive_adaptation: shared/task-management/thinking-integration.yml#Cognitive_Adaptation
 
-# Task Planning
-planning:
-  workflow: shared/task-management/planning-patterns.yml#Planning_Workflow
-  complexity_analysis: shared/task-management/planning-patterns.yml#Complexity_Analysis
-  subtask_guidelines: shared/task-management/planning-patterns.yml#Subtask_Guidelines
-  boundary_definition: shared/task-management/planning-patterns.yml#Boundary_Definition
-  verification_targets: shared/task-management/planning-patterns.yml#Verification_Targets
-
-# Scratchpad Management
-scratchpad:
-  requirements: shared/task-management/scratchpad-patterns.yml#Requirements
-  content_guidelines: shared/task-management/scratchpad-patterns.yml#Content_Guidelines
-  structure: shared/task-management/scratchpad-patterns.yml#Structure
-  mandatory_updates: shared/task-management/scratchpad-patterns.yml#Mandatory_Updates
-
-# Verification & Testing
-verification:
-  targets: shared/task-management/verification-patterns.yml#Verification_Targets
-  visual_targets: shared/task-management/verification-patterns.yml#Visual_Targets
-  test_outputs: shared/task-management/verification-patterns.yml#Test_Outputs
-  acceptance_criteria: shared/task-management/verification-patterns.yml#Acceptance_Criteria
-
-# Error Handling
+# Error Recovery
 errors:
-  recovery: shared/task-management/error-patterns.yml#Error_Recovery
-  registry_corruption: shared/task-management/error-patterns.yml#Registry_Corruption
-  agent_failure: shared/task-management/error-patterns.yml#Agent_Failure
-  deadlock_prevention: shared/task-management/error-patterns.yml#Deadlock_Prevention
-
-# Command Modes
-command_modes:
-  help_detection: shared/task-management/command-patterns.yml#Help_Detection
-  argument_parsing: shared/task-management/command-patterns.yml#Argument_Parsing
-  dry_run: shared/task-management/command-patterns.yml#Dry_Run_Mode
-  critical_mode: shared/task-management/command-patterns.yml#Critical_Mode
+  recovery: shared/task-management/error-recovery.yml#Error_Recovery
+  registry_corruption: shared/task-management/error-recovery.yml#Registry_Corruption
+  agent_failure: shared/task-management/error-recovery.yml#Agent_Failure
+  deadlock_prevention: shared/task-management/error-recovery.yml#Deadlock_Prevention

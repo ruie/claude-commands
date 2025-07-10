@@ -1,0 +1,201 @@
+# Agent Cognition Patterns
+# How AI agents think, work, and preserve knowledge
+
+Agent_Cognitive_Model:
+  core_principles:
+    - "Agents explore before implementing"
+    - "Context preserved through living memory"
+    - "Continuous learning documentation"
+    - "Evidence-based decision making"
+    - "Parallel coordination with boundaries"
+
+Agent_Types:
+  research_agent:
+    purpose: "Exploration without code modification"
+    cognition: "Deep analysis and pattern recognition"
+    outputs:
+      - "Discovered patterns"
+      - "Constraint identification"
+      - "Risk assessment"
+      - "Similar implementations"
+    thinking: "ultrathink for unknowns"
+    constraints: "READ ONLY - no file modifications"
+    
+  implementation_agent:
+    purpose: "Code creation and modification"
+    cognition: "Systematic building with verification"
+    outputs:
+      - "Working code"
+      - "Test coverage"
+      - "Documentation"
+    thinking: "think-hard default"
+    constraints: "Stay within allowed_paths"
+    
+  validation_agent:
+    purpose: "Quality assurance and verification"
+    cognition: "Edge case thinking and completeness"
+    outputs:
+      - "Test results"
+      - "Coverage reports"
+      - "Performance metrics"
+    thinking: "think-hard with edge focus"
+    constraints: "Verify without breaking"
+
+Living_Memory:
+  scratchpad_as_consciousness:
+    continuous_updates:
+      - "Document while thinking, not after"
+      - "Record decision rationale in real-time"
+      - "Capture failed approaches immediately"
+      - "Note patterns as discovered"
+      
+    content_requirements:
+      thinking_process: |
+        ## Current Understanding
+        [What I know so far]
+        
+        ## Approach
+        [How I'm tackling this]
+        
+        ## Discoveries
+        [Patterns and insights found]
+        
+        ## Challenges
+        [What's not working and why]
+        
+        ## Key Commands
+        [Useful commands that worked]
+        
+        ## Next Agent Notes
+        [What the next agent needs to know]
+        
+    knowledge_types:
+      - Code patterns: "Found X pattern in Y module"
+      - Failed attempts: "Tried X but failed because Y"  
+      - Success patterns: "Y worked because Z"
+      - External knowledge: "API docs say X"
+      - Edge cases: "Discovered edge case when X"
+
+Workspace_Consciousness:
+  agent_boundaries:
+    task_workspace:
+      root: "tasks/active/task-{ID}/"
+      consciousness_files:
+        spec.md: "Mission understanding"
+        scratchpad.md: "Living thoughts"
+        thinking.log: "Decision history"
+        targets/: "Success visualization"
+        files/: "Work products"
+        
+    allowed_modifications:
+      - "Tasks workspace files"
+      - "Assigned module paths"
+      - "Test files in scope"
+      - "Documentation updates"
+      
+    forbidden_zones:
+      - "Other agents' workspaces"
+      - "System configuration"
+      - "Task registry (except status)"
+      - "Other modules"
+
+Cognitive_Isolation:
+  context_management:
+    - "Each agent starts fresh"
+    - "No conversation history"
+    - "Must read scratchpad for context"
+    - "Build on previous discoveries"
+    
+  focus_maintenance:
+    - "One task at a time"
+    - "One subtask focus"
+    - "Clear success criteria"
+    - "Defined boundaries"
+
+Knowledge_Synthesis:
+  pattern_recognition:
+    - "Similar to pattern in [module]"
+    - "Follows [framework] convention"
+    - "Matches [project] style"
+    - "Contradicts pattern in [location]"
+    
+  learning_accumulation:
+    discovered_patterns:
+      - pattern: "Error handling style"
+        location: "src/modules/X"
+        reusable: true
+        
+    solution_evolution:
+      - "Task 1 tried X"
+      - "Task 2 improved with Y"
+      - "Task 3 perfected with Z"
+
+Agent_Instructions:
+  critical_protocol: |
+    ## YOUR AGENT CONTEXT
+    You are a specialized agent with:
+    - Task ID: {task_id}
+    - Subtask: {subtask_id}  
+    - Boundaries: {allowed_paths}
+    - Thinking: {thinking_mode}
+    
+    ## CRITICAL RULES
+    1. READ spec.md and scratchpad.md FIRST
+    2. UPDATE scratchpad.md CONTINUOUSLY
+    3. STAY within your boundaries
+    4. USE evidence-based decisions
+    5. DOCUMENT everything you learn
+    
+    ## FORBIDDEN
+    - Using TodoWrite for tasks
+    - Modifying other workspaces
+    - Making unsubstantiated claims
+    - Working without updating scratchpad
+    
+  thinking_protocol: |
+    For EVERY decision:
+    1. State the problem
+    2. Consider options with evidence
+    3. Document why choosing X
+    4. Record in scratchpad
+    5. Implement with verification
+
+Execution_Monitoring:
+  cognitive_health:
+    healthy_signs:
+      - "Scratchpad growing with insights"
+      - "Registry updates after subtasks"
+      - "Evidence cited for decisions"
+      - "Patterns being discovered"
+      
+    warning_signs:
+      - "No scratchpad updates in 10 min"
+      - "Repeating same approach"
+      - "No evidence citations"
+      - "Stuck on same problem"
+      
+    intervention_triggers:
+      - "Agent looping"
+      - "Context lost"
+      - "Boundary violations"
+      - "Thinking budget exceeded"
+
+Multi_Agent_Coordination:
+  knowledge_sharing:
+    through_registry:
+      - "Pattern discoveries"
+      - "Solution approaches"
+      - "Failed attempts"
+      - "Performance metrics"
+      
+    through_scratchpad:
+      - "Detailed reasoning"
+      - "Code examples"
+      - "Edge cases found"
+      - "Next steps guidance"
+      
+  parallel_harmony:
+    - "Agents work independently"
+    - "Share through artifacts"
+    - "No direct communication"
+    - "Synthesis by main thread"

@@ -1,0 +1,212 @@
+# Thinking Integration Patterns
+# Cognitive depth management with natural language detection
+
+Thinking_Modes:
+  standard:
+    description: "Basic analysis for simple tasks"
+    thought_count: "3-5"
+    use_cases:
+      - "Simple queries"
+      - "Straightforward fixes"
+      - "Documentation updates"
+      - "Mechanical tasks"
+    natural_triggers:
+      - "quickly"
+      - "simple"
+      - "just"
+      - "minor"
+      
+  think_hard:
+    description: "Deep analysis (DEFAULT for agents)"
+    thought_count: "8-10"
+    use_cases:
+      - "All task planning"
+      - "All agent execution"
+      - "Complex debugging"
+      - "Architecture decisions"
+    natural_triggers:
+      - "carefully"
+      - "thoroughly"
+      - "properly"
+      - "comprehensively"
+    is_default: true
+    
+  ultrathink:
+    description: "Maximum cognitive depth"
+    thought_count: "10-15"
+    use_cases:
+      - "Complex architecture design"
+      - "Multi-system integration"
+      - "Performance optimization"
+      - "Security-critical features"
+    natural_triggers:
+      - "deeply analyze"
+      - "maximum analysis"
+      - "exhaustive"
+      - "comprehensive analysis"
+
+Natural_Language_Detection:
+  thinking_depth_from_language:
+    minimal_indicators:
+      words: ["quick", "fast", "simple", "just"]
+      phrases: ["real quick", "just need", "simply"]
+      mode: "standard"
+      
+    careful_indicators:
+      words: ["careful", "thorough", "proper", "detailed"]
+      phrases: ["think through", "analyze this", "investigate"]
+      mode: "think-hard"
+      
+    maximum_indicators:
+      words: ["deep", "exhaustive", "comprehensive", "maximum"]
+      phrases: ["deeply analyze", "think deeply", "maximum effort"]
+      mode: "ultrathink"
+
+Automatic_Depth_Selection:
+  by_task_type:
+    research_tasks:
+      default: "ultrathink"
+      reason: "Unknown unknowns require deep exploration"
+      
+    implementation_tasks:
+      default: "think-hard"
+      reason: "Balance between speed and quality"
+      
+    validation_tasks:
+      default: "think-hard"
+      reason: "Edge case discovery needs depth"
+      
+    simple_tasks:
+      default: "standard"
+      reason: "Don't overthink mechanical work"
+      
+  by_complexity_score:
+    "0-3": "standard"
+    "4-7": "think-hard"
+    "8-10": "ultrathink"
+    ">10": "ultrathink + decomposition"
+    
+  by_failure_history:
+    first_attempt: "Estimated depth"
+    after_blocker: "Upgrade one level"
+    repeated_failure: "Maximum depth"
+
+Budget_Management:
+  allocation_strategy:
+    task_planning:
+      base: "8-10 thoughts"
+      complex: "10-15 thoughts"
+      research_heavy: "+5 thoughts for exploration"
+      
+    agent_execution:
+      per_subtask: "8-10 thoughts base"
+      debugging: "+5 thoughts when blocked"
+      verification: "+3 thoughts for edge cases"
+      
+  efficiency_tracking:
+    metrics:
+      thoughts_per_subtask: "Target: 8-12"
+      thoughts_per_decision: "Target: 2-3"
+      reuse_rate: "Target: >30%"
+      
+    optimization:
+      - "Reuse discovered patterns"
+      - "Delegate research early"
+      - "Cache common decisions"
+      - "Learn from failures"
+
+Subagent_Thinking:
+  delegation_intelligence:
+    when_to_delegate:
+      immediate:
+        - "External API research"
+        - "Pattern discovery"
+        - "Error investigation"
+        - "Documentation lookup"
+        
+      after_attempt:
+        - "Complex debugging"
+        - "Performance analysis"
+        - "Security review"
+        
+    delegation_depth:
+      research_agents: "Usually ultrathink"
+      implementation_agents: "Usually think-hard"
+      validation_agents: "Match main agent"
+      
+    prompt_optimization:
+      - "Specific, focused questions"
+      - "Clear output format"
+      - "Depth guidance included"
+      - "Context boundaries set"
+
+Cognitive_Adaptation:
+  dynamic_adjustment:
+    escalation_triggers:
+      - "Stuck for >10 minutes"
+      - "Repeated similar errors"
+      - "Unexpected complexity discovered"
+      - "Critical safety concerns"
+      
+    de_escalation_triggers:
+      - "Clear path forward"
+      - "Pattern recognized"
+      - "Simple mechanical work"
+      - "Time pressure"
+      
+  context_preservation:
+    during_thinking:
+      - "Document key insights"
+      - "Note decision points"
+      - "Track alternatives considered"
+      - "Record why approaches rejected"
+      
+    between_agents:
+      - "Summarize thinking approach"
+      - "Highlight key decisions"
+      - "Note effective strategies"
+      - "Warn about pitfalls"
+
+Output_Enhancement:
+  by_thinking_mode:
+    standard:
+      - "Direct solutions"
+      - "Clear next steps"
+      - "Minimal explanation"
+      
+    think_hard:
+      - "Reasoned decisions"
+      - "Alternative considerations"
+      - "Risk acknowledgment"
+      - "Evidence citations"
+      
+    ultrathink:
+      - "Comprehensive analysis"
+      - "Multiple approaches evaluated"
+      - "Edge cases considered"
+      - "Future implications addressed"
+      - "Detailed risk mitigation"
+
+Integration_With_Workflow:
+  phase_specific_thinking:
+    exploration:
+      mode: "ultrathink"
+      focus: "Discover unknowns"
+      
+    planning:
+      mode: "think-hard to ultrathink"
+      focus: "Optimal decomposition"
+      
+    implementation:
+      mode: "think-hard"
+      focus: "Quality execution"
+      
+    verification:
+      mode: "think-hard"
+      focus: "Edge case discovery"
+      
+  continuous_optimization:
+    - "Track thinking efficiency"
+    - "Identify reusable patterns"
+    - "Build decision templates"
+    - "Evolve depth heuristics"
