@@ -199,3 +199,28 @@ Multi_Agent_Coordination:
     - "Share through artifacts"
     - "No direct communication"
     - "Synthesis by main thread"
+
+Agent_Work_Completion:
+  when_all_subtasks_done:
+    final_actions:
+      - "Complete final scratchpad synthesis"
+      - "Document all patterns discovered"
+      - "List what was accomplished"
+      - "Note any edge cases found"
+      - "Verify all tests passing"
+      
+    final_message_template: |
+      ## Work Complete
+      
+      ✓ All subtasks completed
+      ✓ Tests passing: [list specific tests]
+      ✓ Patterns documented: [count] new patterns
+      ✓ Edge cases found: [list any discovered]
+      
+      ## Ready for Human Review
+      
+      Please review the implementation and test manually.
+      The work is complete and ready for your verification.
+      
+    no_completion_command: "Agents do NOT use task completion commands"
+    human_responsibility: "Only humans move tasks to completed after review"

@@ -159,6 +159,8 @@ Cross_Task_Learning:
 
 Knowledge_Synthesis:
   task_completion:
+    human_only_process: "Only humans complete tasks after manual review"
+    
     knowledge_extraction:
       - "Summarize key learnings"
       - "Extract reusable patterns"
@@ -166,10 +168,15 @@ Knowledge_Synthesis:
       - "Update best practices"
       
     archival_process:
-      - "Move to completed_tasks"
-      - "Preserve scratchpad"
+      - "Validate all work complete"
+      - "Human reviews implementation"
+      - "Human tests manually"
+      - "Human moves to completed_tasks"
+      - "Preserve full workspace"
       - "Update knowledge graph"
       - "Calculate impact metrics"
+      
+    agent_role: "Agents finish work and report readiness only"
       
   organizational_learning:
     pattern_evolution:

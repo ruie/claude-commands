@@ -220,6 +220,14 @@ Following SimpleClaude's DNA:
 - **Parallel coordination over sequential**
 - **Learning system over static tools**
 
+## Creating New Commands
+
+Follow the **SYSTEM-DNA.md** blueprint in `.claude/shared/` to create new commands that maintain our architectural principles. The DNA document provides:
+- Complete command template
+- Pattern file structure
+- Natural language guidelines
+- Testing requirements
+
 ## Future Vision
 
 This system will continue evolving based on real usage:
