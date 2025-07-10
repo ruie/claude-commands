@@ -1,0 +1,188 @@
+# Natural Language Intelligence Patterns
+# Semantic understanding and transformation for task management
+
+Semantic_Understanding:
+  core_principle: "Natural language drives everything - no flags or complex syntax"
+  
+  task_planning:
+    triggers:
+      creation: ["plan", "create", "add", "build", "design", "need"]
+      analysis: ["analyze", "deeply analyze", "think about", "explore"]
+      urgent: ["urgent", "emergency", "critical", "asap", "immediately"]
+      careful: ["carefully", "thoroughly", "comprehensively", "deeply"]
+    
+    transformations:
+      "plan email notifications" →
+        intent: create_task
+        type: feature
+        complexity: medium
+        thinking: think-hard
+        research: true
+        
+      "fix login bug quickly" →
+        intent: create_task  
+        type: bug
+        urgency: high
+        thinking: standard
+        research: minimal
+        
+      "deeply analyze payment architecture" →
+        intent: create_task
+        type: analysis
+        complexity: high
+        thinking: ultrathink
+        research: extensive
+
+  task_execution:
+    triggers:
+      run: ["execute", "run", "do", "work on", "start", "begin"]
+      careful: ["carefully", "with care", "thoroughly", "meticulously"]
+      fast: ["quickly", "fast", "immediately", "now", "asap"]
+      specific: ["task N", "the X task", "high priority", "blocked tasks"]
+    
+    transformations:
+      "execute all tasks" →
+        scope: all_pending
+        parallel: true
+        thinking: think-hard
+        
+      "carefully work on task 3" →
+        scope: specific_task(3)
+        parallel: false
+        thinking: ultrathink
+        
+      "quickly run high priority" →
+        scope: priority_filter(high)
+        parallel: true
+        thinking: standard
+
+  status_queries:
+    triggers:
+      overview: ["show", "status", "overview", "summary", "everything"]
+      analysis: ["analyze", "why", "investigate", "deep dive", "understand"]
+      specific: ["task N", "about X", "how is Y", "progress on Z"]
+      metrics: ["metrics", "thinking", "performance", "efficiency"]
+    
+    transformations:
+      "why are tasks blocked" →
+        query: blocker_analysis
+        depth: deep
+        thinking: think-hard
+        
+      "show task 3 progress" →
+        query: task_detail
+        target: task_3
+        depth: standard
+
+Intent_Detection:
+  patterns:
+    # Complexity indicators
+    simple_task_indicators:
+      - "quick"
+      - "simple" 
+      - "just"
+      - "small"
+      - "minor"
+      
+    complex_task_indicators:
+      - "complex"
+      - "comprehensive"
+      - "large"
+      - "major"
+      - "system-wide"
+      
+    # Urgency detection
+    urgent_indicators:
+      - "urgent"
+      - "emergency"
+      - "critical"
+      - "asap"
+      - "immediately"
+      - "production issue"
+      
+    # Thinking depth cues
+    deep_thinking_cues:
+      - "deeply"
+      - "carefully"
+      - "thoroughly"
+      - "analyze"
+      - "comprehensive"
+      
+    minimal_thinking_cues:
+      - "quickly"
+      - "fast"
+      - "simple"
+      - "straightforward"
+
+Complexity_Assessment:
+  automatic_scoring:
+    word_analysis:
+      - Contains "authentication": +2 complexity
+      - Contains "payment": +3 complexity  
+      - Contains "integration": +2 complexity
+      - Contains "refactor": +2 complexity
+      - Contains "fix": -1 complexity
+      - Contains "update": -1 complexity
+      
+    scope_detection:
+      - Multiple modules mentioned: +3
+      - Single file mentioned: -2
+      - "System" or "architecture": +3
+      - Specific function/method: -1
+      
+    risk_indicators:
+      - "Production": +2 risk
+      - "Security": +3 risk
+      - "Data": +2 risk
+      - "Test" or "development": -2 risk
+
+Natural_Responses:
+  command_empty:
+    task_plan: |
+      I'll help you plan a task. Try describing what you need:
+      • "plan email notification feature"
+      • "create a bug fix for authentication"  
+      • "deeply analyze the payment system"
+      
+    task_execute: |
+      I'll execute tasks for you. You can say:
+      • "execute all pending tasks"
+      • "run high priority tasks only"
+      • "carefully work on the authentication task"
+      
+    task_status: |
+      I'll show you task status. Try asking:
+      • "show me everything"
+      • "why are tasks blocked?"
+      • "how is task 3 progressing?"
+      
+  confirmations:
+    understood: "I understand. You want to {action} for {target}."
+    clarification: "Just to clarify: {interpretation}. Is this correct?"
+    
+Evidence_Language:
+  required_patterns:
+    - "found in {location}"
+    - "based on {evidence}"
+    - "according to {source}"
+    - "tests show {result}"
+    - "{count} occurrences in codebase"
+    
+  forbidden_patterns:
+    - "should work"
+    - "probably"
+    - "I think"
+    - "might be good"
+    - "seems optimal"
+
+Command_Boundaries:
+  task_plan:
+    stops_at: "Task registered with specification"
+    natural_completion:
+      - "Task #{ID} created successfully"
+      - "Planning complete. Use '/task-execute {ID}' to begin"
+      - "Specification saved. Ready for /task-execute"
+    prevents:
+      - "Automatic execution"
+      - "Code writing"
+      - "Implementation start"

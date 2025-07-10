@@ -1,119 +1,246 @@
-# Claude Commands - Task Management System
+# Task Management Commands - SimpleClaude DNA Edition
 
-A comprehensive task management system for Claude Code with strict isolation, registry-based tracking, and deep thinking modes.
+A revolutionary task management system for AI agents that understands natural language, preserves knowledge, and enables parallel coordination. Built with SimpleClaude's DNA for maximum simplicity and power.
+
+## 🧬 What's New: SimpleClaude DNA Transformation
+
+This system has been completely rebuilt following SimpleClaude's architectural patterns:
+
+- **Natural Language First**: No more flags! Just describe what you want
+- **60-Line Commands**: All commands reduced from 300-500 lines to ~65 lines
+- **7 Core Pattern Files**: Consolidated from 11 fragmented files
+- **Living Memory**: Scratchpad as agent consciousness
+- **Evidence-Based**: All decisions backed by proof
+- **Think-Hard Default**: Deep analysis (8-10 thoughts) for all agents
 
 ## Overview
 
-This repository contains custom Claude Code commands that implement a powerful task management workflow with:
-- Registry-based task tracking
-- Agent isolation and boundaries
-- Think-hard mode by default (8-10 thoughts)
-- Ultrathink mode for complex tasks (10-15 thoughts)
-- Visual targets and verification
-- Subagent delegation patterns
+Transform how AI agents work on projects with:
+- **Natural conversation** instead of complex flags
+- **Living memory** that preserves discoveries across tasks
+- **Parallel coordination** with intelligent isolation
+- **Automatic thinking depth** based on complexity
+- **Knowledge accumulation** that makes future tasks easier
 
 ## Commands
 
-### `/task-init`
-Initialize the task management system with exact folder structure and configuration files.
+### `/task-plan` - Natural Task Planning
+```bash
+# Old way with flags
+/task-plan --type feature --priority high --ultrathink
 
-### `/task-plan` 
-Interactive task planning with automatic specification generation and registry management.
-- Default: Think-hard mode (8-10 thoughts)
-- `--ultrathink`: Maximum analysis (10-15 thoughts)
+# New natural way
+/task-plan create urgent email notification system with deep analysis
+/task-plan fix the login bug quickly
+/task-plan deeply analyze payment architecture
+```
 
-### `/task-execute`
-Execute tasks in parallel with strict agent isolation and mandatory registry updates.
-- All agents use think-hard mode by default
-- `--ultrathink`: Upgrade agents to maximum thinking
+### `/task-execute` - Intelligent Execution
+```bash
+# Natural execution control
+/task-execute all high priority tasks
+/task-execute carefully work on the authentication task
+/task-execute quickly run task 3
+/task-execute continue blocked tasks with deep analysis
+```
 
-### `/task-status`
-Monitor task execution progress and analyze blockers with registry synchronization checks.
-- `--analyze`: Deep analysis with think-hard mode
-- `--ultrathink`: Maximum analysis for complex issues
+### `/task-status` - Conversational Monitoring
+```bash
+# Ask naturally about status
+/task-status why are tasks blocked
+/task-status show task 3 progress
+/task-status analyze system performance
+/task-status what's the thinking budget usage
+```
 
-### `/task-clear`
-Clear all tasks and reset the task management system to start fresh.
-- `--preserve-context`: Keep verification targets and thinking logs
+### `/task-init` - Smart Initialization
+```bash
+# Natural setup options
+/task-init with example tasks
+/task-init minimal setup
+/task-init restore from backup
+/task-init for complex project
+```
+
+### `/task-clear` - Intelligent Cleanup
+```bash
+# Preserve knowledge while clearing
+/task-clear completed tasks only
+/task-clear everything but keep learnings
+/task-clear old tasks from last month
+```
 
 ## Key Features
 
-### 🧠 Thinking Modes
-- **Default**: Think-hard mode (8-10 sequential thoughts)
-- **Enhanced**: Ultrathink mode (10-15 thoughts) for complex tasks
+### 🧠 Natural Language Intelligence
+The system understands your intent without flags:
+- "deeply analyze" → ultrathink mode (10-15 thoughts)
+- "carefully" → think-hard mode (8-10 thoughts)
+- "quickly" → standard mode (3-5 thoughts)
+- "urgent" → high priority
+- "bug" → creates bug fix task
 
-### 📋 Registry Protocol
-Every task is tracked in a central registry with mandatory updates after each subtask completion.
+### 📝 Living Memory System
+Scratchpad as agent consciousness:
+```markdown
+## Current Understanding
+[Real-time agent thoughts]
 
-### 🔒 Agent Isolation
-Strict boundaries ensure agents only modify allowed paths and cannot interfere with other tasks.
+## Discoveries
+[Patterns found, with evidence]
+
+## Failed Attempts
+[What didn't work and why]
+
+## Key Commands
+[Useful commands that worked]
+
+## Next Agent Guidance
+[Critical handoff information]
+```
+
+### 🤖 Intelligent Agent Types
+- **Research Agents**: Explore without writing code
+- **Implementation Agents**: Build with verification
+- **Validation Agents**: Ensure quality
+- **Specialist Agents**: Domain-specific expertise
 
 ### 🎯 Verification Targets
-Visual targets, test outputs, and acceptance criteria prevent solutions from "overfitting" initial requirements.
+Prevent overfitting with:
+- Visual targets (screenshots, UI mockups)
+- Behavioral contracts ("must handle nulls", "< 200ms response")
+- Test specifications
+- Acceptance criteria
 
-### 🤖 Subagent Delegation
-Early delegation for research and investigation tasks to preserve main context.
+### 🧬 Knowledge Evolution
+The system gets smarter over time:
+- Patterns discovered in one task help future tasks
+- Failed approaches are remembered
+- Successful solutions evolve
+- Cross-task learning automatic
 
 ## Installation
 
-1. Clone this repository into your project:
+1. Clone the repository:
    ```bash
-   git clone git@github.com:ruie/claude-commands.git
+   git clone https://github.com/yourusername/task-management-commands.git
+   cd task-management-commands
    ```
-2. Copy the `.claude` folder to your project root:
+
+2. Copy to your project:
    ```bash
-   cp -r claude-commands/.claude /path/to/your/project/
+   cp -r .claude /path/to/your/project/
    ```
-3. Initialize the task system:
+
+3. Initialize the system:
    ```bash
    /task-init
    ```
 
-Alternatively, you can clone directly into your project:
-```bash
-cd /path/to/your/project
-git clone git@github.com:ruie/claude-commands.git temp-commands
-cp -r temp-commands/.claude .
-rm -rf temp-commands
+## Architecture
+
+### Command Structure (SimpleClaude DNA)
+Each command is ~65 lines following this template:
+```markdown
+**Purpose**: [Clear statement]
+---
+@include shared/task-management/includes.yml
+## Command Execution
+[Natural language parsing]
+[Semantic transformations]
+[Core workflows]
 ```
 
-## Usage Example
+### Pattern Files (7 Core Files)
+1. **natural-intelligence.yml** - Language understanding
+2. **agent-cognition.yml** - How agents think
+3. **task-workflows.yml** - Explore→Plan→Build→Verify
+4. **knowledge-management.yml** - Registry & memory
+5. **coordination-patterns.yml** - Multi-agent orchestration
+6. **thinking-integration.yml** - Cognitive depth
+7. **error-recovery.yml** - Failure handling
+
+## Example Workflow
 
 ```bash
-# Initialize the system
-/task-init
+# 1. Plan a complex feature with deep analysis
+/task-plan deeply analyze and plan user authentication system
 
-# Plan a new feature
-/task-plan --type feature --ultrathink
+# 2. System automatically:
+#    - Spawns research agents
+#    - Explores without writing code
+#    - Synthesizes findings
+#    - Creates detailed spec
+#    - Sets verification targets
+#    - Shows: "Planning complete. Use '/task-execute {ID}' to begin"
 
-# Execute the task
-/task-execute --tasks last
+# 3. Execute with natural control (separate command required)
+/task-execute the authentication task carefully
 
-# Monitor progress
-/task-status --watch
+# 4. Monitor progress naturally
+/task-status why is authentication blocked
+
+# 5. Knowledge preserved for future
+# Next task benefits from discoveries
 ```
 
-## Best Practices
+## Migration from Previous Version
 
-1. **Always use the task registry** - Never use TodoWrite for project tasks
-2. **Update registry after every subtask** - This is mandatory
-3. **Document in scratchpad continuously** - Not just status, but learnings
-4. **Stay within task boundaries** - Only modify allowed paths
-5. **Use think-hard by default** - 8-10 thoughts minimum
+This version uses natural language exclusively. If you're using the old flag-based system:
 
-## Based on Claude Code Best Practices
+### Quick Translation Guide
+```bash
+# Old → New
+--priority high → "urgent" or "high priority"
+--ultrathink → "deeply analyze" or "with deep analysis"
+--type bug → "fix bug" or "bug fix"
+--tasks 1,2,3 → "tasks 1, 2, and 3"
+--analyze → "analyze why" or "deep analysis"
+```
 
-This system implements recommendations from [Anthropic's Claude Code best practices](https://www.anthropic.com/engineering/claude-code-best-practices), including:
-- Graduated thinking budgets
-- Four-phase workflow (Explore → Plan → Implement → Verify)
-- Early subagent delegation
-- Visual target verification
-- Context preservation
+**Note**: This version requires a clean installation. Old pattern files should be removed after migration.
+
+## Testing
+
+Run the test suite:
+```bash
+./test-task-commands.sh all        # All tests
+./test-task-commands.sh structure  # Command structure
+./test-task-commands.sh language   # Natural language
+./test-task-commands.sh evidence   # Evidence validation
+```
+
+## Philosophy
+
+Following SimpleClaude's DNA:
+- **Surface simplicity, deep power**
+- **Natural language over flags**
+- **Evidence over assumptions**
+- **Living memory over static docs**
+- **Parallel coordination over sequential**
+- **Learning system over static tools**
+
+## Future Vision
+
+This system will continue evolving based on real usage:
+- More natural language patterns
+- Smarter agent coordination
+- Deeper knowledge synthesis
+- Visual task understanding
+- Cross-project learning
 
 ## License
 
-MIT License - See LICENSE file for details
+MIT License - See LICENSE file
 
 ## Contributing
 
-Contributions are welcome! Please submit pull requests with clear descriptions of changes.
+We follow user-driven development:
+1. Use the system in real projects
+2. Report what works/doesn't work
+3. Suggest improvements based on actual needs
+4. No speculative features - only proven needs
+
+## Acknowledgments
+
+Built with SimpleClaude's DNA - transforming complexity into natural conversation.

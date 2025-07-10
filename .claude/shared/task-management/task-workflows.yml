@@ -1,0 +1,218 @@
+# Task Workflow Patterns
+# Complete task lifecycle from exploration to verification
+
+Task_Lifecycle:
+  phases:
+    explore:
+      description: "Research without implementation"
+      cognition: "ultrathink"
+      agents: ["researcher", "pattern_scout", "doc_explorer"]
+      outputs: ["constraints", "patterns", "risks", "opportunities"]
+      duration: "20-30% of total time"
+      
+    plan:
+      description: "Synthesize findings into strategy"  
+      cognition: "think-hard"
+      agents: ["main"]
+      outputs: ["task_spec", "subtasks", "boundaries", "targets"]
+      duration: "10-15% of total time"
+      
+    implement:
+      description: "Build with continuous verification"
+      cognition: "think-hard"
+      agents: ["implementer", "coder", "integrator"]
+      outputs: ["code", "tests", "documentation"] 
+      duration: "50-60% of total time"
+      
+    verify:
+      description: "Ensure requirements met without overfitting"
+      cognition: "think-hard"
+      agents: ["validator", "tester"]
+      outputs: ["test_results", "coverage", "performance"]
+      duration: "10-15% of total time"
+
+Phase_Boundaries:
+  planning_stops:
+    description: "Planning phase creates spec only"
+    outputs: ["task_spec", "registry_entry", "workspace_setup"]
+    handoff: "Explicit /task-execute command required"
+    natural_language_cues:
+      completion: ["planning complete", "ready for /task-execute", "specification created"]
+      prevention: ["starting work", "implementing", "building"]
+
+Exploration_Patterns:
+  research_first:
+    mandatory_for:
+      - "New feature development"
+      - "Unknown error investigation"
+      - "External API integration"
+      - "Architecture decisions"
+      - "Performance optimization"
+      
+    research_agents:
+      pattern_scout:
+        mission: "Find similar implementations"
+        searches: ["code patterns", "existing solutions", "conventions"]
+        
+      doc_researcher:
+        mission: "Study external documentation"
+        searches: ["API docs", "framework guides", "best practices"]
+        
+      constraint_mapper:
+        mission: "Identify limitations and risks"
+        searches: ["dependencies", "performance limits", "security concerns"]
+        
+    synthesis_protocol:
+      - "All agents report findings"
+      - "Main thread reads all reports"
+      - "Identifies key patterns"
+      - "Surfaces critical constraints"
+      - "Informs implementation plan"
+
+Planning_Workflow:
+  complexity_scoring:
+    factors:
+      scope:
+        low: "1-2 files, single module"
+        medium: "3-5 files, 2-3 modules"  
+        high: "6+ files, multiple modules"
+        
+      dependencies:
+        low: "No external deps"
+        medium: "1-2 well-known deps"
+        high: "Multiple or unknown deps"
+        
+      risk:
+        low: "Isolated changes"
+        medium: "Some integration risk"
+        high: "Core system changes"
+        
+    scoring_formula: |
+      total = scope + dependencies + risk + testing
+      0-4: Simple (3-4 subtasks)
+      5-8: Standard (4-6 subtasks)
+      9-12: Complex (6-8 subtasks)
+      >12: Split into multiple tasks
+
+  subtask_design:
+    optimal_characteristics:
+      duration: "1-3 hours focused work"
+      scope: "Single clear objective"
+      testability: "Independently verifiable"
+      boundaries: "Clear input/output"
+      
+    context_enrichment:
+      required:
+        - "Link to relevant docs"
+        - "Example code patterns"
+        - "Common pitfalls"
+        - "Success criteria"
+        
+    sequencing_strategy:
+      - "Dependencies first"
+      - "Risky changes early"
+      - "Core features middle"
+      - "Polish and docs last"
+
+Verification_Patterns:
+  verification_targets:
+    visual_targets:
+      purpose: "Prevent overfitting to requirements"
+      types:
+        - "UI screenshots"
+        - "Terminal output examples"
+        - "Expected behaviors"
+        - "Error message formats"
+      storage: "tasks/active/task-X/targets/"
+      
+    behavioral_contracts:
+      purpose: "Define success without implementation details"
+      examples:
+        - "Handles null values gracefully"
+        - "Responds within 200ms"
+        - "Follows security best practices"
+        - "Validates all user input"
+        
+    test_specifications:
+      unit_tests: "Function-level verification"
+      integration_tests: "Module interaction verification"
+      acceptance_tests: "User-facing verification"
+      performance_tests: "Speed and resource verification"
+
+  validation_workflow:
+    continuous_verification:
+      - "Test after each subtask"
+      - "Verify against targets"
+      - "Check behavioral contracts"
+      - "Measure performance"
+      
+    final_validation:
+      completeness_check:
+        - "All subtasks completed"
+        - "All tests passing"
+        - "Targets achieved"
+        - "No regressions"
+        
+      quality_metrics:
+        - "Code coverage > threshold"
+        - "Performance within bounds"
+        - "Documentation complete"
+        - "Knowledge captured"
+
+Implementation_Patterns:
+  parallel_execution:
+    when_suitable:
+      - "Independent subtasks"
+      - "Different modules"
+      - "No shared state"
+      - "Clear boundaries"
+      
+    coordination:
+      - "Registry locks prevent conflicts"
+      - "Workspace isolation"
+      - "Synthesis points defined"
+      - "Knowledge sharing via scratchpad"
+      
+  incremental_building:
+    approach:
+      - "Small working increments"
+      - "Test each increment"
+      - "Document discoveries"
+      - "Update registry"
+      
+    continuous_integration:
+      - "Merge frequently"
+      - "Resolve conflicts early"
+      - "Maintain working state"
+      - "Preserve test coverage"
+
+Workflow_Adaptation:
+  task_type_workflows:
+    feature:
+      emphasis: "exploration and planning"
+      workflow: "heavy research → detailed plan → incremental build → thorough testing"
+      
+    bug:
+      emphasis: "reproduction and diagnosis"
+      workflow: "reproduce → investigate → fix → regression test"
+      
+    refactor:
+      emphasis: "safety and verification"
+      workflow: "understand current → plan changes → incremental refactor → verify behavior"
+      
+    hotfix:
+      emphasis: "speed with safety"
+      workflow: "immediate fix → test critical paths → deploy → full test later"
+
+Knowledge_Preservation:
+  during_workflow:
+    exploration: "Document all findings"
+    planning: "Capture decision rationale"
+    implementation: "Record what worked/failed"
+    verification: "Note edge cases found"
+    
+  workflow_artifacts:
+    - "Pattern library updates"
+    - "Solution templates"
+    - "Failure case studies"
+    - "Performance benchmarks"

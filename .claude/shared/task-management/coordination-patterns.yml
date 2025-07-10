@@ -1,0 +1,266 @@
+# Multi-Agent Coordination Patterns
+# Orchestration, isolation, and parallel execution
+
+Agent_Orchestration:
+  parallel_execution:
+    max_agents: 5
+    coordination_model: "Independent with shared artifacts"
+    communication: "Through registry and scratchpad only"
+    
+    allocation_strategy:
+      by_priority:
+        critical: "All available agents"
+        high: "Up to 3 agents"
+        medium: "Up to 2 agents"
+        low: "Single agent"
+        
+      by_complexity:
+        simple: "Single agent"
+        standard: "2-3 agents on subtasks"
+        complex: "Full parallel team"
+        
+      by_dependency:
+        independent: "Full parallel"
+        sequential: "Pipeline mode"
+        interdependent: "Phased execution"
+        
+      planning_agents:
+        allowed: ["researcher", "analyzer", "planner"]
+        forbidden: ["implementer", "coder", "builder"]
+        boundary: "No execution agents during planning"
+
+Agent_Isolation:
+  workspace_boundaries:
+    physical_isolation:
+      task_root: "tasks/active/task-{ID}/"
+      agent_workspace: "tasks/active/task-{ID}/agent-{AGENT_ID}/"
+      shared_space: "tasks/active/task-{ID}/shared/"
+      
+    access_control:
+      read_permissions:
+        - "Own workspace: full access"
+        - "Task spec: read only"
+        - "Shared space: read only"
+        - "Other agents: forbidden"
+        
+      write_permissions:
+        - "Own workspace: full access"
+        - "Assigned paths: full access"
+        - "Registry: status updates only"
+        - "Everything else: forbidden"
+        
+    boundary_enforcement:
+      - "Path validation before operations"
+      - "Registry lock verification"
+      - "Workspace existence check"
+      - "Permission verification"
+
+Lock_Management:
+  distributed_locking:
+    lock_structure:
+      task_id: "Task being worked on"
+      agent_id: "Agent holding lock"
+      locked_at: "ISO timestamp"
+      expires_at: "ISO timestamp"
+      subtask_id: "Current subtask"
+      
+    lock_protocol:
+      acquisition:
+        - "Check if task is locked"
+        - "Verify lock not expired"
+        - "Atomic lock creation"
+        - "Set appropriate timeout"
+        
+      renewal:
+        - "Extend before expiry"
+        - "Update progress proof"
+        - "Maximum 3 renewals"
+        
+      release:
+        - "Update final status"
+        - "Clear lock entry"
+        - "Notify completion"
+
+Execution_Monitoring:
+  health_monitoring:
+    check_interval: 30  # seconds
+    
+    agent_health:
+      healthy_indicators:
+        - "Registry updates on schedule"
+        - "Scratchpad growing"
+        - "Within workspace bounds"
+        - "Making progress"
+        
+      warning_signs:
+        - "No updates in 5 minutes"
+        - "Scratchpad stagnant"
+        - "Repeated operations"
+        - "High error rate"
+        
+      failure_indicators:
+        - "No updates in 15 minutes"
+        - "Lock expired"
+        - "Boundary violations"
+        - "Unhandled exceptions"
+        
+    intervention_protocol:
+      warning_level:
+        - "Send reminder to agent"
+        - "Check scratchpad for issues"
+        - "Prepare intervention"
+        
+      failure_level:
+        - "Mark subtask as blocked"
+        - "Release locks"
+        - "Document failure"
+        - "Queue for retry"
+
+Coordination_Strategies:
+  research_swarm:
+    pattern: "Multiple researchers explore in parallel"
+    
+    agent_missions:
+      pattern_researcher:
+        goal: "Find similar code patterns"
+        duration: "15-30 minutes"
+        output: "Pattern report with examples"
+        
+      documentation_researcher:
+        goal: "Study external docs"
+        duration: "15-30 minutes"
+        output: "Key findings and constraints"
+        
+      risk_researcher:
+        goal: "Identify potential issues"
+        duration: "15-30 minutes"
+        output: "Risk assessment and mitigations"
+        
+    synthesis:
+      - "All agents complete research"
+      - "Main thread reads all reports"
+      - "Identifies common themes"
+      - "Creates unified understanding"
+      
+  implementation_pipeline:
+    pattern: "Sequential execution with handoffs"
+    
+    pipeline_stages:
+      foundation:
+        agents: ["structure_builder"]
+        output: "Basic file structure"
+        
+      core_logic:
+        agents: ["logic_implementer"]
+        output: "Core functionality"
+        
+      integration:
+        agents: ["integration_specialist"]
+        output: "Connected systems"
+        
+      polish:
+        agents: ["cleanup_agent"]
+        output: "Refined solution"
+        
+  validation_chorus:
+    pattern: "Multiple validators check different aspects"
+    
+    validation_aspects:
+      functional_validator:
+        checks: "Core functionality"
+        
+      edge_case_validator:
+        checks: "Boundary conditions"
+        
+      performance_validator:
+        checks: "Speed and resources"
+        
+      security_validator:
+        checks: "Vulnerabilities"
+
+Communication_Protocols:
+  artifact_sharing:
+    through_scratchpad:
+      - "Detailed discoveries"
+      - "Code examples"
+      - "Decision rationale"
+      - "Next steps guidance"
+      
+    through_registry:
+      - "Status updates"
+      - "Pattern discoveries"
+      - "Completion signals"
+      - "Blocker notifications"
+      
+    through_files:
+      - "Code deliverables"
+      - "Test results"
+      - "Documentation"
+      - "Performance reports"
+      
+  no_direct_communication:
+    principle: "Agents never talk directly"
+    reasons:
+      - "Maintains isolation"
+      - "Prevents coupling"
+      - "Enables parallel work"
+      - "Simplifies coordination"
+
+Progress_Tracking:
+  subtask_granularity:
+    reporting_frequency: "After each meaningful step"
+    
+    progress_indicators:
+      started: "0%"
+      exploring: "20%"
+      implementing: "50%"
+      testing: "80%"
+      complete: "100%"
+      
+  aggregate_metrics:
+    task_level:
+      - "Subtasks completed / total"
+      - "Agents active / allocated"
+      - "Time elapsed / estimated"
+      - "Blockers encountered"
+      
+    system_level:
+      - "Total tasks in progress"
+      - "Agent utilization rate"
+      - "Average time per subtask"
+      - "Knowledge accumulation rate"
+
+Failure_Recovery:
+  agent_failure:
+    detection: "Monitoring alerts on failure"
+    
+    immediate_response:
+      - "Capture agent state"
+      - "Read scratchpad for context"
+      - "Mark subtask as blocked"
+      - "Release all locks"
+      
+    recovery_options:
+      retry_same:
+        when: "Transient failure"
+        how: "New agent, same approach"
+        
+      retry_different:
+        when: "Approach failure"
+        how: "New agent, new approach"
+        
+      escalate:
+        when: "Repeated failures"
+        how: "Human intervention needed"
+        
+  deadlock_prevention:
+    detection:
+      - "Circular dependencies"
+      - "Resource contention"
+      - "Lock timeouts"
+      
+    prevention:
+      - "Dependency ordering"
+      - "Resource allocation"
+      - "Timeout mechanisms"
+      - "Deadlock detection
