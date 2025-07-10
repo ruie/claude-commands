@@ -56,9 +56,26 @@ Early delegation for research and investigation tasks to preserve main context.
 
 ## Installation
 
-1. Clone this repository
-2. Copy the `.md` files to your project's `.claude/commands/` directory
-3. Initialize with `/task-init`
+1. Clone this repository into your project:
+   ```bash
+   git clone git@github.com:ruie/claude-commands.git
+   ```
+2. Copy the `.claude` folder to your project root:
+   ```bash
+   cp -r claude-commands/.claude /path/to/your/project/
+   ```
+3. Initialize the task system:
+   ```bash
+   /task-init
+   ```
+
+Alternatively, you can clone directly into your project:
+```bash
+cd /path/to/your/project
+git clone git@github.com:ruie/claude-commands.git temp-commands
+cp -r temp-commands/.claude .
+rm -rf temp-commands
+```
 
 ## Usage Example
 
