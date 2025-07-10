@@ -1,0 +1,95 @@
+# Error Handling Patterns
+
+Error_Recovery:
+  detection_methods:
+    - "Health check failures"
+    - "Registry update timeout"
+    - "Scratchpad not growing"
+    - "Forbidden tool usage"
+    - "Path boundary violation"
+  immediate_actions:
+    - "Stop agent execution"
+    - "Mark subtask blocked"
+    - "Update registry with error"
+    - "Release task lock"
+    - "Alert user"
+  recovery_steps:
+    - "Analyze scratchpad context"
+    - "Review error details"
+    - "Fix root cause"
+    - "Update task spec if needed"
+    - "Restart with fresh agent"
+
+Registry_Corruption:
+  symptoms:
+    - "JSON parse errors"
+    - "Checksum mismatch"
+    - "Missing required fields"
+    - "Inconsistent state"
+  prevention:
+    - "Atomic file operations"
+    - "Pre-write validation"
+    - "Backup before updates"
+    - "Checksum verification"
+  recovery:
+    automatic:
+      - "Detect corruption on read"
+      - "Load latest backup"
+      - "Replay recent history"
+      - "Validate recovered state"
+    manual:
+      - "User confirmation required"
+      - "Show corruption details"
+      - "Offer recovery options"
+      - "Log incident"
+
+Agent_Failure:
+  types:
+    timeout:
+      detection: "No update in 15 minutes"
+      response: "Release lock, mark blocked"
+    crash:
+      detection: "Agent process terminated"
+      response: "Clean up, restart"
+    violation:
+      detection: "Forbidden action attempted"
+      response: "Immediate termination"
+    quality:
+      detection: "Poor output quality"
+      response: "Review and reassign"
+  diagnostics:
+    - "Check last registry update"
+    - "Review scratchpad content"
+    - "Analyze execution history"
+    - "Identify failure pattern"
+  remediation:
+    - "Fix identified issues"
+    - "Update agent instructions"
+    - "Add validation checks"
+    - "Improve monitoring"
+
+Deadlock_Prevention:
+  causes:
+    - "Circular task dependencies"
+    - "Multiple agents waiting"
+    - "Resource contention"
+    - "Lock timeout failures"
+  detection:
+    - "Monitor lock wait times"
+    - "Track dependency chains"
+    - "Detect circular waits"
+    - "Alert on long blocks"
+  prevention:
+    - "Dependency validation"
+    - "Lock ordering protocol"
+    - "Timeout mechanisms"
+    - "Resource scheduling"
+  resolution:
+    automatic:
+      - "Force lock release"
+      - "Reorder task queue"
+      - "Break dependency cycle"
+    manual:
+      - "User intervention"
+      - "Task restructuring"
+      - "Priority override"

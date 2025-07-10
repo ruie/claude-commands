@@ -1,0 +1,101 @@
+# Thinking Mode Patterns
+
+Thinking_Modes:
+  standard:
+    description: "Basic analysis"
+    thought_count: "3-5"
+    use_cases:
+      - "Simple queries"
+      - "Straightforward fixes"
+      - "Documentation updates"
+    tool: "Not required"
+  think_hard:
+    description: "Deep analysis (DEFAULT)"
+    thought_count: "8-10"
+    use_cases:
+      - "All task planning"
+      - "All agent execution"
+      - "Complex debugging"
+      - "Architecture decisions"
+    tool: "mcp__sequential-thinking__sequentialthinking"
+    is_default: true
+  ultrathink:
+    description: "Maximum analysis"
+    thought_count: "10-15"
+    use_cases:
+      - "Complex architecture design"
+      - "Multi-system integration"
+      - "Performance optimization"
+      - "Security-critical features"
+    tool: "mcp__sequential-thinking__sequentialthinking"
+    requires: "--ultrathink flag"
+
+Default_Behavior:
+  task_planning:
+    mode: "think-hard"
+    automatic: true
+    message: "🧠 Think-hard mode active by default - Using deep analysis (8-10 thoughts)"
+  agent_execution:
+    mode: "think-hard"
+    automatic: true
+    instructions: "Use sequential thinking for all complex decisions"
+  task_status_analysis:
+    mode: "think-hard"
+    trigger: "--analyze flag"
+    focus: "Blocker root cause analysis"
+
+Ultrathink_Mode:
+  activation:
+    - "User includes --ultrathink flag"
+    - "Explicit request for maximum analysis"
+    - "Task complexity score > 8/10"
+  characteristics:
+    - "10-15 sequential thoughts"
+    - "Exhaustive edge case analysis"
+    - "Multiple approach evaluation"
+    - "Risk assessment for each option"
+    - "Prevention of constraint overfitting"
+  output_enhancement:
+    - "Detailed decision rationale"
+    - "Alternative approaches considered"
+    - "Risk mitigation strategies"
+    - "Future-proofing considerations"
+    - "Performance implications"
+
+Budget_Tracking:
+  metrics:
+    total_thoughts:
+      description: "Cumulative thought count"
+      tracking: "Per task and globally"
+    thought_distribution:
+      planning: "Thoughts used in planning phase"
+      execution: "Thoughts used during implementation"
+      debugging: "Thoughts used for problem-solving"
+    efficiency_score:
+      calculation: "Subtasks completed / thoughts used"
+      target: "> 0.1 (1 subtask per 10 thoughts)"
+  reporting:
+    - "Show in task-status output"
+    - "Track in registry thinking_metrics"
+    - "Alert on unusual consumption"
+    - "Suggest mode upgrades when needed"
+
+Subagent_Delegation:
+  triggers:
+    - "External API documentation needed"
+    - "Complex error investigation"
+    - "Pattern search across codebase"
+    - "Framework best practices research"
+    - "Performance profiling required"
+  best_practices:
+    - "Delegate early to preserve context"
+    - "Provide specific, focused prompts"
+    - "Request structured output"
+    - "Verify and integrate findings"
+    - "Track delegation count"
+  efficiency_gains:
+    - "Parent preserves decision context"
+    - "Parallel information gathering"
+    - "Specialized tool usage"
+    - "Reduced token consumption"
+    - "Faster turnaround"

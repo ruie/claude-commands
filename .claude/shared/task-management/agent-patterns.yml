@@ -1,0 +1,105 @@
+# Agent Execution Patterns
+
+Agent_Isolation:
+  principles:
+    - "Each agent works on exactly ONE task"
+    - "No cross-task file access"
+    - "Exclusive lock required"
+    - "Clear workspace boundaries"
+    - "No shared state between agents"
+  enforcement:
+    - "Task-specific working directories"
+    - "Explicit allowed_paths list"
+    - "Forbidden paths validation"
+    - "Registry lock mechanism"
+    - "Timeout-based lock release"
+
+Workspace_Boundaries:
+  task_workspace:
+    root: "tasks/active/task-{ID}/"
+    structure:
+      spec.md: "Task specification (read-only)"
+      scratchpad.md: "Working notes (mandatory updates)"
+      files/: "Task-specific files"
+      targets/: "Verification targets"
+      thinking.log: "Sequential thinking output"
+  allowed_modifications:
+    - "tasks/active/task-{ID}/scratchpad.md"
+    - "tasks/active/task-{ID}/files/*"
+    - "tasks/active/task-{ID}/thinking.log"
+    - "Paths listed in task.allowed_paths"
+  forbidden_modifications:
+    - "tasks/task-registry.json (except status updates)"
+    - "tasks/active/task-{OTHER_ID}/*"
+    - "Paths listed in task.forbidden_paths"
+    - "System configuration files"
+    - ".claude/* files"
+
+Agent_Instructions:
+  mandatory_reading:
+    - "Task specification file first"
+    - "Parent task spec if bug fix"
+    - "Related task specs if linked"
+  critical_rules:
+    - "NO TodoWrite for project tasks"
+    - "Update registry after EVERY subtask"
+    - "Update scratchpad CONTINUOUSLY"
+    - "Stay within allowed_paths"
+    - "Use think-hard mode by default"
+  scratchpad_requirements:
+    - "Document every action taken"
+    - "Record discoveries and learnings"
+    - "Note helpful commands/patterns"
+    - "Track errors and resolutions"
+    - "Save useful code snippets"
+    - "Record decision rationale"
+  failure_conditions:
+    - "Using TodoWrite for project work"
+    - "Not updating registry"
+    - "Empty or minimal scratchpad"
+    - "Modifying forbidden paths"
+    - "Working without task lock"
+
+Execution_Monitoring:
+  check_interval: 5 # seconds
+  health_checks:
+    - "Agent still responsive"
+    - "Registry being updated"
+    - "Scratchpad has new content"
+    - "No forbidden tool usage"
+    - "Within allowed paths"
+  progress_tracking:
+    - "Subtasks completed count"
+    - "Time per subtask"
+    - "Thinking budget used"
+    - "Subagent delegations"
+    - "Blocker encounters"
+  red_flags:
+    - "No registry update in 15 minutes"
+    - "Scratchpad not growing"
+    - "TodoWrite usage detected"
+    - "Forbidden path access"
+    - "Stuck on same subtask > 30 min"
+
+Failure_Protocol:
+  detection:
+    - "Monitor health checks"
+    - "Track red flags"
+    - "Validate output quality"
+  response:
+    immediate:
+      - "Mark subtask as blocked"
+      - "Update registry with error"
+      - "Release task lock"
+      - "Stop agent execution"
+    investigation:
+      - "Check scratchpad for context"
+      - "Review error details"
+      - "Identify root cause"
+      - "Plan remediation"
+  recovery:
+    - "Fix identified issues"
+    - "Update task spec if needed"
+    - "Reset subtask status"
+    - "Restart with new agent"
+    - "Monitor closely"

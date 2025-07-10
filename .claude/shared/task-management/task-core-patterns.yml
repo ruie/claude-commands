@@ -1,0 +1,116 @@
+# Core Task Management Patterns
+
+Task_Lifecycle:
+  phases:
+    planned:
+      description: "Task created and specified"
+      allowed_transitions: ["in_progress", "blocked"]
+      registry_location: "active_tasks"
+      requires_spec: true
+    in_progress:
+      description: "Agent actively working"
+      allowed_transitions: ["completed", "blocked"]
+      registry_location: "active_tasks"
+      requires_lock: true
+    blocked:
+      description: "Waiting for dependency or fix"
+      allowed_transitions: ["in_progress", "planned"]
+      registry_location: "active_tasks"
+      requires_reason: true
+    completed:
+      description: "All subtasks done"
+      allowed_transitions: [] # terminal state
+      registry_location: "completed_tasks"
+      archive_required: true
+
+Task_States:
+  planned:
+    color: "blue"
+    icon: "📋"
+    description: "Ready for execution"
+  in_progress:
+    color: "yellow"
+    icon: "🔄"
+    description: "Currently being worked on"
+  completed:
+    color: "green"
+    icon: "✅"
+    description: "Successfully finished"
+  blocked:
+    color: "red"
+    icon: "🚫"
+    description: "Cannot proceed"
+
+Task_Priorities:
+  critical:
+    level: 0
+    color: "red"
+    icon: "🚨"
+    description: "Production issues, data loss risk"
+    execution_order: "immediate"
+    agent_allocation: "all available"
+    allowed_only_with: "--critical flag or explicit request"
+  high:
+    level: 1
+    color: "orange"
+    icon: "🔥"
+    description: "Important features, blocking bugs"
+    execution_order: "after critical"
+    agent_allocation: "standard"
+  medium:
+    level: 2
+    color: "yellow"
+    icon: "📌"
+    description: "Regular features, improvements"
+    execution_order: "after high"
+    agent_allocation: "standard"
+  low:
+    level: 3
+    color: "gray"
+    icon: "📎"
+    description: "Nice-to-have, cleanup"
+    execution_order: "when idle"
+    agent_allocation: "single agent"
+
+Task_Types:
+  feature:
+    icon: "✨"
+    description: "New functionality"
+    typical_subtasks:
+      - "Design and planning"
+      - "Core implementation"
+      - "Testing"
+      - "Documentation"
+    complexity: "medium to high"
+    verification_needs: "functional tests, visual targets"
+  bug:
+    icon: "🐛"
+    description: "Fix broken functionality"
+    typical_subtasks:
+      - "Reproduce issue"
+      - "Root cause analysis"
+      - "Implement fix"
+      - "Regression testing"
+    complexity: "low to medium"
+    verification_needs: "regression tests, original functionality preserved"
+  refactor:
+    icon: "🔨"
+    description: "Improve code structure"
+    typical_subtasks:
+      - "Analyze current implementation"
+      - "Design improvements"
+      - "Incremental refactoring"
+      - "Verify behavior unchanged"
+    complexity: "medium"
+    verification_needs: "behavior tests, performance benchmarks"
+  hotfix:
+    icon: "🚑"
+    description: "Emergency production fix"
+    typical_subtasks:
+      - "Immediate mitigation"
+      - "Root cause fix"
+      - "Emergency testing"
+      - "Deploy and monitor"
+    complexity: "low"
+    verification_needs: "smoke tests, rollback plan"
+    requires: "--critical flag"

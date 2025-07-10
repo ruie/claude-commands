@@ -3,12 +3,18 @@ description: Interactive task planning with automatic specification generation a
 allowed-tools: [Read, Write, MultiEdit, Task, mcp__sequential-thinking__sequentialthinking]
 ---
 
+@include shared/task-management/thinking-patterns.yml#Default_Behavior
+@include shared/task-management/planning-patterns.yml#Planning_Workflow
+@include shared/task-management/task-core-patterns.yml#Task_Priorities
+
 # Task Planning Assistant
 
 I'll help you plan and specify tasks for the $PROJECT_NAME project with clear boundaries and registry tracking.
 
 ## Command Arguments
 $ARGUMENTS
+
+@include shared/task-management/command-patterns.yml#Help_Detection
 
 ## Check for Help
 !bash -c 'if [[ "$ARGUMENTS" == *"--help"* ]]; then
@@ -68,6 +74,9 @@ If --parent is specified, I'll:
 - TodoWrite is for internal Claude operations only
 - Project work uses the task management system exclusively
 
+@include shared/task-management/thinking-patterns.yml#Thinking_Modes
+@include shared/task-management/thinking-patterns.yml#Ultrathink_Mode
+
 ## Deep Analysis Mode
 
 !bash -c 'echo "🧠 Think-hard mode active by default - Using deep analysis (8-10 thoughts)"'
@@ -105,6 +114,9 @@ I'll work with you to understand:
 - Which parts of the codebase will be affected
 - Expected complexity and timeline
 - Potential risks and challenges
+
+@include shared/task-management/planning-patterns.yml#Complexity_Analysis
+@include shared/task-management/planning-patterns.yml#Subtask_Guidelines
 
 ### Step 2: Task Complexity Analysis & Breakdown
 
@@ -152,6 +164,9 @@ Main Task #1: Add Email Notifications
 └── Subtask 1.6: Add Configuration & Docs (1 hr)
     └── Context: Environment vars, deployment guide
 ```
+
+@include shared/task-management/planning-patterns.yml#Boundary_Definition
+@include shared/task-management/planning-patterns.yml#Verification_Targets
 
 ### Step 3: Boundary Definition
 For each task, I'll define:
@@ -211,6 +226,9 @@ I'll create detailed specs including:
 - No regressions
 ```
 
+@include shared/task-management/registry-patterns.yml#Update_Protocol
+@include shared/task-management/scratchpad-patterns.yml#Requirements
+
 ### Step 5: Registry Integration
 I'll update the task registry with:
 ```json
@@ -256,6 +274,8 @@ I'll update the task registry with:
 4. Calculate new checksum
 5. Write atomically
 6. Verify write success
+
+@include shared/task-management/task-core-patterns.yml#Task_Types
 
 ## Task Types
 

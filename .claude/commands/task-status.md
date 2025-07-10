@@ -3,12 +3,17 @@ description: Monitor task execution progress and analyze blockers with registry 
 allowed-tools: [Read, mcp__sequential-thinking__sequentialthinking, Task]
 ---
 
+@include shared/task-management/task-core-patterns.yml#Task_States
+@include shared/task-management/thinking-patterns.yml#Budget_Tracking
+
 # Task Status Monitor
 
 I'll show you the current status of all tasks and verify registry synchronization.
 
 ## Command Arguments
 $ARGUMENTS
+
+@include shared/task-management/command-patterns.yml#Help_Detection
 
 ## Check for Help
 !bash -c 'if [[ "$ARGUMENTS" == *"--help"* ]]; then
@@ -43,6 +48,8 @@ echo "Status options: $ARGUMENTS"'
 
 ## Load Current Registry
 @tasks/task-registry.json
+
+@include shared/task-management/thinking-patterns.yml#Thinking_Modes
 
 ## Status Configuration
 
@@ -144,6 +151,8 @@ For each active task:
 10:48:02 - Registry sync successful
 ```
 
+@include shared/task-management/thinking-patterns.yml#Budget_Tracking
+
 ### Thinking Budget Usage
 - **Mode**: ${thinking_mode} (think-hard/ultrathink)
 - **Thoughts Used**: ${thoughts_count}
@@ -157,6 +166,8 @@ For each active task:
 - Learnings documented: [yes/no]
 - Thinking process recorded: [yes/no]
 - Verification targets tracked: [X/Y completed]
+
+@include shared/task-management/error-patterns.yml#Error_Recovery
 
 ## Blocker Analysis
 
@@ -361,6 +372,9 @@ Output:
   }
 }
 ```
+
+@include shared/task-management/task-core-patterns.yml#Task_Priorities
+@include shared/task-management/task-core-patterns.yml#Task_States
 
 ## Status Icons Reference
 - 🚨 Critical task (requires immediate attention)

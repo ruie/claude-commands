@@ -3,12 +3,17 @@ description: Initialize task management system with exact folder structure and c
 allowed-tools: [Write, Bash]
 ---
 
+@include shared/task-management/registry-patterns.yml#Registry_Structure
+@include shared/task-management/planning-patterns.yml#Boundary_Definition
+
 # Task Management System Initialization
 
 I will set up the complete task management system with the exact structure required. No guessing, no assumptions.
 
 ## Command Arguments
 $ARGUMENTS
+
+@include shared/task-management/command-patterns.yml#Help_Detection
 
 ## Check for Help
 !bash -c 'if [[ "$ARGUMENTS" == *"--help"* ]]; then
@@ -71,6 +76,9 @@ I will now create the task registry with the following exact content:
 - Project name: Current directory name
 - Timestamps: Current UTC time
 - All required sections with empty initial state
+
+@include shared/task-management/registry-patterns.yml#Registry_Structure
+@include shared/task-management/thinking-patterns.yml#Default_Behavior
 
 The registry will have these exact keys:
 - metadata (version, created, project, description)
@@ -299,6 +307,8 @@ if [[ -f "tasks/task-registry.json" ]]; then
   done
 fi
 '
+
+@include shared/task-management/planning-patterns.yml#Boundary_Definition
 
 ## Step 6: Final Summary
 

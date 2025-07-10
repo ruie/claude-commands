@@ -3,12 +3,17 @@ description: Clear all tasks and reset the task management system to start fresh
 allowed-tools: [Read, Write, Bash]
 ---
 
+@include shared/task-management/registry-patterns.yml#Registry_Structure
+@include shared/task-management/thinking-patterns.yml#Default_Behavior
+
 # Task Management System Clear
 
 I'll help you clear the task management system to start fresh.
 
 ## Command Arguments
 $ARGUMENTS
+
+@include shared/task-management/command-patterns.yml#Help_Detection
 
 ## Check for Help
 !bash -c 'if [[ "$ARGUMENTS" == *"--help"* ]]; then
@@ -203,6 +208,9 @@ I'll reset the task registry with:
 - Empty task queues
 - Clear execution history
 - Fresh timestamp
+
+@include shared/task-management/registry-patterns.yml#Registry_Structure
+@include shared/task-management/thinking-patterns.yml#Budget_Tracking
 
 The registry will be reset to this exact state:
 ```json

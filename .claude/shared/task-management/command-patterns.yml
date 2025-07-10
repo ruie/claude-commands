@@ -1,0 +1,81 @@
+# Command Mode Patterns
+
+Help_Detection:
+  trigger: "--help in arguments"
+  response: "Show command-specific help"
+  format: |
+    # Command Help
+    
+    Usage: /command [options]
+    
+    Options:
+      --option  Description
+    
+    Examples:
+      /command --option value
+  exit: "Exit after showing help"
+
+Argument_Parsing:
+  patterns:
+    flags:
+      format: "--flag-name"
+      examples: ["--force", "--dry-run", "--critical"]
+    key_value:
+      format: "--key value"
+      examples: ["--priority high", "--tasks 1,2,3"]
+    positional:
+      format: "value"
+      examples: ["task description", "file path"]
+  validation:
+    - "Check for help first"
+    - "Parse flags"
+    - "Extract key-value pairs"
+    - "Validate required args"
+    - "Set defaults"
+  error_handling:
+    - "Unknown flag: show valid options"
+    - "Missing value: prompt user"
+    - "Invalid value: show examples"
+
+Dry_Run_Mode:
+  trigger: "--dry-run flag"
+  behavior:
+    - "Show what would happen"
+    - "No actual changes"
+    - "Preview execution plan"
+    - "Estimate completion time"
+  output_format: |
+    DRY RUN - No changes will be made
+    
+    Execution Plan:
+    1. Task #X (priority) - Title
+       Dependencies: [list]
+       Est. time: X hours
+       
+    Total estimated time: Y hours
+  use_cases:
+    - "Preview task execution"
+    - "Validate dependencies"
+    - "Check task conflicts"
+    - "Test command syntax"
+
+Critical_Mode:
+  activation:
+    explicit: "--critical flag"
+    implicit: "User says 'critical' or 'urgent'"
+    validation: "Confirm criticality"
+  effects:
+    task_planning:
+      - "Set priority to critical"
+      - "Minimize subtasks"
+      - "Focus on quick fixes"
+    task_execution:
+      - "Pause other tasks"
+      - "Allocate all agents"
+      - "Priority monitoring"
+      - "Alert on completion"
+  restrictions:
+    - "Requires explicit flag"
+    - "Limited to hotfixes"
+    - "User confirmation needed"
+    - "Logged in history"

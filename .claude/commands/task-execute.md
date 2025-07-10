@@ -3,12 +3,18 @@ description: Execute tasks in parallel with strict agent isolation and mandatory
 allowed-tools: [Read, Write, MultiEdit, Bash, mcp__sequential-thinking__sequentialthinking]
 ---
 
+@include shared/task-management/agent-patterns.yml#Agent_Isolation
+@include shared/task-management/thinking-patterns.yml#Default_Behavior
+@include shared/task-management/registry-patterns.yml#Update_Protocol
+
 # Task Execution Manager
 
 I'll execute tasks from the registry with proper agent isolation and continuous registry synchronization.
 
 ## Command Arguments
 $ARGUMENTS
+
+@include shared/task-management/command-patterns.yml#Help_Detection
 
 ## Check for Help
 !bash -c 'if [[ "$ARGUMENTS" == *"--help"* ]]; then
@@ -61,6 +67,9 @@ Based on your arguments:
 - **--priority**: Execute only tasks of specific priority
 
 **Note**: All agents use think-hard mode (8-10 thoughts) by default for thorough analysis
+
+@include shared/task-management/thinking-patterns.yml#Thinking_Modes
+@include shared/task-management/thinking-patterns.yml#Ultrathink_Mode
 
 ## Deep Thinking Mode
 
@@ -121,6 +130,9 @@ For each task:
 - Project tasks are tracked ONLY in tasks/task-registry.json
 - Update registry after EVERY subtask completion
 - TodoWrite is forbidden for project work
+
+@include shared/task-management/agent-patterns.yml#Agent_Instructions
+@include shared/task-management/scratchpad-patterns.yml#Mandatory_Updates
 
 ## Agent Execution Instructions
 
@@ -201,6 +213,9 @@ for priority in priority_order:
 - Resolve using timestamp-based ordering
 - Alert on sync failures
 
+@include shared/task-management/agent-patterns.yml#Execution_Monitoring
+@include shared/task-management/thinking-patterns.yml#Budget_Tracking
+
 ## Execution Monitoring
 
 ### Real-time Status Updates
@@ -230,6 +245,11 @@ Executing Tasks:
 └─────────────┴────────────┴──────────┴───────────────┘
 ```
 
+@include shared/task-management/error-patterns.yml#Error_Recovery
+@include shared/task-management/error-patterns.yml#Registry_Corruption
+@include shared/task-management/error-patterns.yml#Agent_Failure
+@include shared/task-management/error-patterns.yml#Deadlock_Prevention
+
 ## Error Recovery
 
 ### Registry Corruption
@@ -250,6 +270,8 @@ Executing Tasks:
 3. Force lock release if needed
 4. Requeue affected tasks
 
+@include shared/task-management/command-patterns.yml#Dry_Run_Mode
+
 ## Dry Run Mode
 
 If --dry-run specified:
@@ -258,6 +280,8 @@ If --dry-run specified:
 3. Show dependencies
 4. Estimate completion time
 5. Exit without executing
+
+@include shared/task-management/command-patterns.yml#Critical_Mode
 
 ## Critical Mode
 

@@ -1,0 +1,69 @@
+# Task Management System - Include Registry
+# Centralized registry of all include paths for task management patterns
+
+# Core Task Patterns
+task-core:
+  task_lifecycle: shared/task-management/task-core-patterns.yml#Task_Lifecycle
+  task_states: shared/task-management/task-core-patterns.yml#Task_States
+  task_priorities: shared/task-management/task-core-patterns.yml#Task_Priorities
+  task_types: shared/task-management/task-core-patterns.yml#Task_Types
+
+# Registry Management
+registry:
+  structure: shared/task-management/registry-patterns.yml#Registry_Structure
+  update_protocol: shared/task-management/registry-patterns.yml#Update_Protocol
+  sync_rules: shared/task-management/registry-patterns.yml#Sync_Rules
+  validation: shared/task-management/registry-patterns.yml#Validation
+  atomic_operations: shared/task-management/registry-patterns.yml#Atomic_Operations
+
+# Agent Execution
+agent:
+  isolation: shared/task-management/agent-patterns.yml#Agent_Isolation
+  boundaries: shared/task-management/agent-patterns.yml#Workspace_Boundaries
+  instructions: shared/task-management/agent-patterns.yml#Agent_Instructions
+  monitoring: shared/task-management/agent-patterns.yml#Execution_Monitoring
+  failure_protocol: shared/task-management/agent-patterns.yml#Failure_Protocol
+
+# Thinking Modes
+thinking:
+  modes: shared/task-management/thinking-patterns.yml#Thinking_Modes
+  default_behavior: shared/task-management/thinking-patterns.yml#Default_Behavior
+  ultrathink: shared/task-management/thinking-patterns.yml#Ultrathink_Mode
+  budget_tracking: shared/task-management/thinking-patterns.yml#Budget_Tracking
+  subagent_delegation: shared/task-management/thinking-patterns.yml#Subagent_Delegation
+
+# Task Planning
+planning:
+  workflow: shared/task-management/planning-patterns.yml#Planning_Workflow
+  complexity_analysis: shared/task-management/planning-patterns.yml#Complexity_Analysis
+  subtask_guidelines: shared/task-management/planning-patterns.yml#Subtask_Guidelines
+  boundary_definition: shared/task-management/planning-patterns.yml#Boundary_Definition
+  verification_targets: shared/task-management/planning-patterns.yml#Verification_Targets
+
+# Scratchpad Management
+scratchpad:
+  requirements: shared/task-management/scratchpad-patterns.yml#Requirements
+  content_guidelines: shared/task-management/scratchpad-patterns.yml#Content_Guidelines
+  structure: shared/task-management/scratchpad-patterns.yml#Structure
+  mandatory_updates: shared/task-management/scratchpad-patterns.yml#Mandatory_Updates
+
+# Verification & Testing
+verification:
+  targets: shared/task-management/verification-patterns.yml#Verification_Targets
+  visual_targets: shared/task-management/verification-patterns.yml#Visual_Targets
+  test_outputs: shared/task-management/verification-patterns.yml#Test_Outputs
+  acceptance_criteria: shared/task-management/verification-patterns.yml#Acceptance_Criteria
+
+# Error Handling
+errors:
+  recovery: shared/task-management/error-patterns.yml#Error_Recovery
+  registry_corruption: shared/task-management/error-patterns.yml#Registry_Corruption
+  agent_failure: shared/task-management/error-patterns.yml#Agent_Failure
+  deadlock_prevention: shared/task-management/error-patterns.yml#Deadlock_Prevention
+
+# Command Modes
+command_modes:
+  help_detection: shared/task-management/command-patterns.yml#Help_Detection
+  argument_parsing: shared/task-management/command-patterns.yml#Argument_Parsing
+  dry_run: shared/task-management/command-patterns.yml#Dry_Run_Mode
+  critical_mode: shared/task-management/command-patterns.yml#Critical_Mode
